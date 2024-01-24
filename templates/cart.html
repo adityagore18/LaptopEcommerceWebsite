@@ -1,0 +1,425 @@
+<html>
+  <head>
+
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" integrity="sha256-2TnSHycBDAm2wpZmgdi0z81kykGPJAkiUY+Wf97RbvY=" crossorigin="anonymous"> -->
+
+      <style>
+      .navBar{
+        display:flex;
+        flex-direction: column;
+      }
+      .top{
+        display: flex;
+        background-color: black;
+         margin: 0;
+         padding: 10px;
+        color: white;
+
+      }
+      .top_left{
+        flex: 2;
+        text-align: center;
+
+      }
+      .top_right{
+        flex:1;
+
+      }
+      select{
+        border:none;
+        background-color: black;
+        color: white;
+      }
+      .bottom{
+        display:flex;
+        align-items: center;
+        border-bottom: 1px solid lightgray;
+        margin: 5px;padding: 10px;
+
+
+      }
+      .bottom_left{
+        flex:2;
+        font-weight: 500;
+        font-size: 15px;
+      }
+      .bottom_middle{
+        flex: 3;
+        display: flex;
+        align-items: center;
+
+      }
+      a{
+        margin-left: 10px;
+        color: black;
+        text-decoration: none;
+      }
+      .bottom_right{
+        display:flex;
+        align-items: center;
+
+      }
+      .search_box{
+        display: flex;
+        align-items: center;
+        border: none;
+        background-color: lightgray;
+
+      }
+      .search_input{
+        border: none;
+        background-color: lightgray;
+        padding: 5px;
+        color: white;
+      }
+      .icon_img{
+        margin-left: 10px;
+        height: 20px;
+        width: 20px;
+      }
+
+
+      .horizantal_menu{
+        display: flex;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        height: 75px;
+        margin: 15px;
+        padding: 10px;
+      }
+      .brand_icons{
+        margin: 3px;
+        padding: 2px;
+        height: 70px;
+        width: 70px;
+        background-color: black;
+        align-items: center;
+        border: 1px solid black
+      }
+      .icon_border{
+        border: 1px solid white;
+        border-radius: 50%;
+        text-align: center;
+        color: white;
+      }
+      h2{
+        font-weight: 300;
+      }
+
+      .laptop-info{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0px;padding: 0px;
+      }
+      .laptop-info-top{
+        margin: 0px;
+        padding: 0px;
+      }
+      .laptop-info-bottom{
+        display: flex;
+        align-items: center;
+        margin: 0px;
+        padding: 0px;
+      }
+      #addToCart{
+        border: none;
+        border-radius: 10px;
+        background-color: yellow;
+        color: white;
+        font-weight: 500;
+        margin: 5px;
+        padding: 10px;
+      }
+      #purchase{
+        border: none;
+        border-radius: 10px;
+        background-color:rgb(28, 232, 28);
+        color: white;
+        font-weight: 500;
+        margin: 5px;
+        padding: 10px;
+        cursor:pointer;
+      }
+      #delete{
+        border: none;
+        border-radius: 10px;
+        background-color:red;
+        color: white;
+        font-weight: 500;
+        margin: 5px;
+        padding: 10px;
+        cursor:pointer;
+      }
+
+
+      .footer{
+        background-color: black;
+        display: flex;
+        width: 100%;
+        height: 300px;
+        color: white;
+        padding: 20px;
+      }
+      .footer_left{
+        flex:1;
+        display: flex;
+        flex-direction: column;
+
+      }
+      #i1{
+        font-size: 20px;
+        font-weight: 500;
+      }
+      #i2{
+        font-size: 10px;
+
+      }
+
+      .footer_search_box{
+        border:2px solid white;
+        background-color: black;
+        display: flex;
+        align-items: center;
+
+
+      }
+      .footer_input{
+        border: none;
+        background-color: black;
+        padding: 10px;
+        width: 80%;
+        color:white;
+
+
+      }
+      .footer_container{
+        flex:1;
+        display: flex;
+        flex-direction: column;
+      }
+      h5{
+        font-size: 18px;
+        font-weight:  500;
+      }
+      ul{
+        margin-left: -30px;
+        list-style-type: none;
+        font-size: 15px;
+      }
+      .footer_right{
+        flex:1;
+        display: flex;
+         flex-direction: column;
+        align-items: center;
+      }
+      .footer_container2{
+        display: flex;
+        flex-direction: row;
+      }
+      .footer_item{
+        margin-left: 5px;
+        display: inline;
+        height: 20px;
+        width: 20px;
+        border: none;
+      }
+      .footer_img{
+
+        height: 20px;
+        width: 20px;
+      }
+
+
+
+
+
+
+
+
+
+
+      </style>
+  </head>
+  <body>
+      <div class="NavBar">
+       <div class="top">
+        <div class="top_left">
+           This is online shopping Mart
+        </div>
+        <div class="top_right">
+        <select name="pets" id="pet-select">
+        <option value="">English</option>
+        <option value="dog">Marathi</option>
+        <option value="cat">Hindi</option>
+
+      </select>
+        </div>
+       </div>
+       <div class="bottom">
+        <div class="bottom_left">
+          Exclusive
+        </div>
+        <div class="bottom_middle">
+          <a href="{{url_for('user')}}">Home</a>
+          <a href='/'>Contact</a>
+          <a href='/'>About</a>
+          <a href="{{ url_for('register')}}">Sign Up</a>
+        </div>
+        <div class="bottom_right">
+          <div class="search_box">
+            <input type="text" placeholder="Search Here .." class="search_input">
+            <img src="../static/images/icon-images/search.png" alt="" class="icon_img">
+          </div>
+            <img src="../static/images/icon-images/account.png" alt="" class="icon_img">{{var}}
+            <img src="../static/images/icon-images/heart.png" alt="" class="icon_img">
+            <a href="{{ url_for('cart')}}"><img src="../static/images/icon-images/shopping-cart.png" alt="" class="icon_img"></a>
+            <a href="{{ url_for('logout')}}"><img src="../static/images/icon-images/logout.png" alt="" class="icon_img"></a>
+
+        </div>
+       </div>
+    </div>
+      <h3 style="color:green;text-align:center;">{{msg }}</h3>
+
+
+    <div class="horizantal_menu">
+      <a href="/"><div class="brand_icons">
+         <div class="icon_border">
+            <h2>Dell</h2>
+         </div>
+      </div></a>
+
+      <a href="/"><div class="brand_icons">
+         <div class="icon_border">
+            <h2>Hp</h2>
+         </div>
+      </div></a>
+
+      <a href="/"><div class="brand_icons">
+         <div class="icon_border">
+            <h2>Acer</h2>
+         </div>
+      </div></a>
+
+      <a href="/"><div class="brand_icons">
+         <div class="icon_border">
+            <h2>Asus</h2>
+         </div>
+      </div></a>
+
+      <a href="/"><div class="brand_icons">
+         <div class="icon_border">
+            <h2>Apple</h2>
+         </div>
+      </div></a>
+
+      <a href="/"><div class="brand_icons">
+         <div class="icon_border">
+            <h2>Infix</h2>
+         </div>
+      </div></a>
+
+      <a href="/"><div class="brand_icons">
+         <div class="icon_border">
+            <h2>leneva</h2>
+         </div>
+      </div></a>
+    </div>
+
+
+
+   <div style="display:flex;flex-direction: column;  ">
+      {% for row in rows %}
+   
+      <div style="display: flex; align-items: center; border:1px solid black; border-radius: 10px; margin: 5px;padding: 5px;">
+      {% set file_name = row['file_name'] %}
+      {% set id = row['id'] %}
+      <div style="flex: 2;" >
+      <img src="{{ url_for('display_image', file_name=file_name ) }}" height="250px" width="250px" alt="image" > 
+      </div>
+      <div  style="flex: 3; display:flex; flex-direction: column; ">
+      <i stle="margin-left:20px;">Name  :</i> {{ row['name'] }}
+
+      <i stle="margin-left:20px;">Price :</i> {{ row['price'] }} 
+     </div>
+     <div style="flex: 2; display: flex;">
+         {% set file_name = row['file_name'] %}
+      <a href="/"><button type="button" id="purchase">Purchase</button></a>
+      <a href="{{ url_for('remove', file_name = file_name)}}"><button type="button" id="delete">Remove</button></a>
+        
+     </div>
+     </div>
+
+
+     
+    {% endfor %}
+
+   </div>
+
+
+
+
+
+
+
+
+
+
+    <div class="footer">
+
+      <div class="footer_left">
+        <h3 id="i1">Exclusive</h3>
+        <h6 id="i2">Subscribe</h6>
+        <div class="footer_search_box">
+          <input type="text" placeholder="Enter Email Id"class="footer_input">
+          <img src="../static/images/icon-images/send.png" alt="" class="footer_img">
+
+        </div>
+      </div>
+      <div class="footer_container">
+        <h5>Support</h5>
+        <p></p>
+      </div>
+      <div class="footer_container">
+        <h5>Account</h5>
+        <ul>
+          <li>My Account</li>
+          <li>Login / Register</li>
+          <li>Cart</li>
+          <li>Wishlist</li>
+          <li>Shop</li>
+        </ul>
+      </div>
+      <div class="footer_container">
+        <h5>Quick Link</h5>
+        <ul>
+          <li>Privacy Policy</li>
+          <li>Trems Of Use</li>
+          <li>FAQ</li>
+          <li>Contact</li>
+        </ul>
+      </div>
+      <div class="footer_right">
+        <h3>Follow us</h3>
+        <div class="footer_container2">
+          <div class="footer_item">
+               <img src="../static/images/icon-images/facebook.png" alt="" class="footer_img">
+          </div>
+          <div class="footer_item">
+            <img src="../static/images/icon-images/instagram.png" alt="" class="footer_img">
+
+          </div>
+          <div class="footer_item">
+            <img src="../static/images/icon-images/twitter-sign.png" alt="" class="footer_img">
+
+          </div>
+          <div class="footer_item">
+            <img src="../static/images/icon-images/linkedin.png" alt="" class="footer_img">
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha256-gOQJIa9+K/XdfAuBkg2ONAdw5EnQbokw/s2b8BqsRFg=" crossorigin="anonymous"></script> -->
+  </body>
+</html>
